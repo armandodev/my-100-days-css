@@ -15,6 +15,18 @@ body {
   justify-content: center;
 }
 
+.go-back-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+}
+
+.chevron-left-square {
+  width: 40px;
+  height: 40px;
+}
+
 .frame {
   position: relative;
   display: flex;
