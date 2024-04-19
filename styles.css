@@ -46,6 +46,8 @@ img {
 
 .days {
   display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
 }
@@ -82,6 +84,6 @@ img {
 }
 
 .shadow {
-  filter: blur(1em) brightness(0.5);
+  filter: blur(1em) brightness(0.8);
   z-index: -50;
 }
