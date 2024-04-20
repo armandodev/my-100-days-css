@@ -62,13 +62,13 @@ img {
 
 @media screen and (min-width: 500px) {
   .day {
-    width: calc(100% / 2);
+    width: calc(100% / 2 - 2rem);
   }
 }
 
 @media screen and (min-width: 800px) {
   .day {
-    width: calc(100% / 3);
+    width: calc(100% / 3 - 2rem);
   }
 }
 
@@ -84,7 +84,8 @@ img {
 }
 
 .shadow {
-  filter: blur(1em) brightness(0.8);
+  opacity: 0.5;
+  filter: blur(1em);
   z-index: -50;
 }
 
