@@ -37,11 +37,11 @@ body {
   aspect-ratio: 1/1;
   border-radius: 2px;
   box-shadow: 4px 8px 16px 0 rgb(0 0 0 / 10%);
-  background: #3faf82;
+  background: #272c34;
   overflow: hidden;
 }
 
-.frame .center {
+.center {
   position: relative;
   width: 100px;
   height: 100px;
@@ -51,42 +51,4 @@ body {
   gap: 1rem;
   align-items: center;
   justify-content: center;
-}
-
-.bar {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 8px;
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  opacity: 1;
-  transition: transform 200ms, opacity 200ms;
-}
-
-.bar:first-of-type {
-  transform: translate(-50%, -300%);
-}
-
-.bar:last-of-type {
-  transform: translate(-50%, 200%);
-}
-
-.bar.active {
-  transform: translate(-50%, -50%);
-}
-
-.bar:nth-child(2).active {
-  opacity: 0;
-}
-
-.bar.active.rotate:first-of-type {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.bar.active.rotate:last-of-type {
-  transform: translate(-50%, -50%) rotate(-45deg);
 }
