@@ -1,0 +1,307 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+:root {
+  --red: #fa7373;
+  --blue: #7ba2ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  width: 100%;
+  max-width: 800px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.go-back-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+}
+
+.chevron-left-square {
+  width: 40px;
+  height: 40px;
+}
+
+.frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgb(0 0 0 / 10%);
+  background: #42a7a1;
+  color: #fff;
+  overflow: hidden;
+}
+
+.center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.statistic {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  background: #f1ba64;
+  color: #fff;
+  padding: 10px;
+}
+
+.title,
+.type {
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.date {
+  display: block;
+  font-weight: 400;
+  font-size: 11px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.type-title {
+  display: block;
+  font-weight: 400;
+  font-size: 11px;
+  text-align: end;
+}
+
+.params {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  justify-content: end;
+  text-align: right;
+  padding: 10px 6px;
+}
+
+.params span {
+  font-size: 9px;
+  color: #606060;
+}
+
+.red-line,
+.blue-line {
+  width: 11px;
+  height: 3px;
+  border-radius: 3px;
+}
+
+.red-line {
+  background: var(--red);
+}
+
+.blue-line {
+  background: var(--blue);
+}
+
+.values {
+  position: relative;
+  height: 81px;
+  width: 260px;
+  margin: 0 auto;
+  padding: 10px 6px;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  left: 6px;
+  right: 6px;
+  height: 1px;
+  background: #f2f2f2;
+}
+
+.line-2 {
+  top: 40px;
+}
+
+.line-3 {
+  top: 80px;
+}
+
+.data svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.data polyline {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.data.views polyline {
+  stroke: var(--red);
+}
+
+.data.purchases polyline {
+  stroke: var(--blue);
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 13px;
+  left: 50%;
+  transform: translate3d(-50%, 10px, 0);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 11px;
+  color: #fff;
+  padding: 8px 6px;
+  border-radius: 3px;
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s;
+}
+
+.tooltip:after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 6px;
+  width: 6px;
+  left: 50%;
+  margin-left: -3px;
+  bottom: -3px;
+  transform: rotate(45deg);
+}
+
+[class^="point-"] {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+[class^="point-"]:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.data.views [class^="point-"],
+.data.views .tooltip,
+.data.views .tooltip:after {
+  background: var(--red);
+}
+
+.data.views .point-mon {
+  left: 7px;
+  top: 43px;
+}
+
+.data.views .point-tue {
+  left: 48px;
+  top: 9px;
+}
+.data.views .point-wed {
+  left: 88px;
+  top: 20px;
+}
+.data.views .point-thu {
+  left: 128px;
+  top: 8px;
+}
+.data.views .point-fri {
+  left: 169px;
+  top: 35px;
+}
+.data.views .point-sat {
+  left: 209px;
+  top: 45px;
+}
+.data.views .point-sun {
+  left: 249px;
+  top: 16px;
+}
+
+.data.purchases [class^="point-"],
+.data.purchases .tooltip,
+.data.purchases .tooltip:after {
+  background: var(--blue);
+}
+
+.data.purchases .point-mon {
+  left: 7px;
+  top: 58px;
+}
+.data.purchases .point-tue {
+  left: 48px;
+  top: 47px;
+}
+.data.purchases .point-wed {
+  left: 88px;
+  top: 62px;
+}
+.data.purchases .point-thu {
+  left: 128px;
+  top: 52px;
+}
+.data.purchases .point-fri {
+  left: 169px;
+  top: 58px;
+}
+.data.purchases .point-sat {
+  left: 209px;
+  top: 71px;
+}
+.data.purchases .point-sun {
+  left: 249px;
+  top: 61px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.footer span {
+  font-size: 9px;
+  color: #949494;
+  line-height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
