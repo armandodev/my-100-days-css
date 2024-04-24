@@ -1,0 +1,198 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  max-width: 800px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.go-back-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+}
+
+.chevron-left-square {
+  width: 40px;
+  height: 40px;
+}
+
+.frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgb(0 0 0 / 10%);
+  background: linear-gradient(45deg, #eebe6c, #ca7c4e);
+  color: #786450;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.center {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #efefef;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 100%;
+}
+
+.image {
+  position: relative;
+  cursor: pointer;
+}
+
+.circle {
+  position: absolute;
+  box-sizing: border-box;
+  width: 76px;
+  height: 76px;
+  top: -3px;
+  left: -3px;
+  border-radius: 50%;
+  transition: transform 1500ms ease-in-out;
+}
+
+.circle.circle-1 {
+  border: 1px solid #786450;
+  border-left-color: transparent;
+}
+
+.circle.circle-2 {
+  width: 82px;
+  height: 82px;
+  top: -6px;
+  left: -6px;
+  border: 1px solid #786450;
+  border-right-color: transparent;
+}
+
+.image:hover .circle-1 {
+  transform: rotate(360deg);
+}
+
+.image:hover .circle-2 {
+  transform: rotate(-360deg);
+}
+
+.image img {
+  display: block;
+  border-radius: 50%;
+  background: #f5e8df;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.info h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.info p {
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.button {
+  cursor: pointer;
+  display: block;
+  width: 120px;
+  height: 30px;
+  margin: 0 auto 10px auto;
+  background: none;
+  border: 1px solid #786450;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  box-sizing: border-box;
+  transition: background 200ms ease-in-out, color 200ms ease-in-out;
+  color: #786450;
+}
+
+.button:hover {
+  background: #786450;
+  color: #f5e8df;
+}
+
+.button.active {
+  background: #786450;
+  color: #f5e8df;
+}
+
+#follow.button.active:hover {
+  background: #f5e8df;
+  color: #786450;
+}
+
+#message.button.active {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.stats {
+  display: grid;
+  gap: 1px;
+  width: 100px;
+  height: 100%;
+}
+
+.stat {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f5e8df;
+  transition: background 200ms ease-in-out;
+}
+
+.stat:hover {
+  background: #e1cfc2;
+}
+
+.stat .value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.stat .parameter {
+  font-size: 11px;
+}
